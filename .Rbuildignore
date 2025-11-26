@@ -1,0 +1,4 @@
+^LICENSE\.md$
+^data$
+^demo\.R$
+^.*\.tar\.gz$
