@@ -1,3 +1,1 @@
-utils::globalVariables(
-    c("pctpred", ".")
-)
+utils::globalVariables(c("pctpred", "value", "pred", "."))
