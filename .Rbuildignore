@@ -2,3 +2,4 @@
 ^data$
 ^demo\.R$
 ^.*\.tar\.gz$
+^\.github$
