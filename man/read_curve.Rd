@@ -7,7 +7,7 @@
 read_curve(x, trace = NULL)
 }
 \arguments{
-\item{x}{An XML document object, as returned by \code{\link[xml2:read_xml]{xml2::read_xml()}}.}
+\item{x}{An ndd Easyware XML file read by \code{xml2::read_xml()}.}
 
 \item{trace}{A positive integer specifying which trial(s) to extract (by rank)}
 }

@@ -8,42 +8,38 @@ read_spiro(
   x,
   parameters = c("FEV1", "FVC", "FEV1_FVC"),
   trace = NULL,
-  wide = TRUE,
-  tidy_colorder = TRUE,
   pct_pred = TRUE
 )
 }
 \arguments{
-\item{x}{An XML document object, as returned by \code{\link[xml2:read_xml]{xml2::read_xml()}}.}
+\item{x}{an ndd Easyware XML file read by \code{xml2::read_xml()}.}
 
-\item{parameters}{A character vector of parameter IDs to extract (e.g., \code{"FEV1"}, \code{"FVC"}).
-Defaults to common spirometry parameters.
-All parameters in the ndd XML file can be retrieved using \code{get_params()}
+\item{parameters}{A character vector of parameter IDs to extract
+(e.g., \code{"FEV1"}, \code{"FVC"}). Defaults to common spirometry parameters.
+All parameters in the ndd XML file can be retrieved using \code{ls_params()}
 the function won't check input parameters for you}
 
-\item{trace}{A positive integer specifying which trial(s) to extract (by rank), or NULL to include all trials.}
+\item{trace}{A positive integer specifying which trial(s) to extract (by rank),
+or NULL to include all trials.}
 
-\item{wide}{Logical. If TRUE (default), returns data in wide format (one row per test/trial). If FALSE, returns long format (one row per parameter).}
-
-\item{tidy_colorder}{Logical. If TRUE (default), orders columns in a tidy, grouped fashion (only relevant if \code{wide = TRUE}).}
-
-\item{pct_pred}{Logical. If TRUE (default), precentage of predicted will be derived (100*value/pred)}
+\item{pct_pred}{Logical. If TRUE (default), precentage of predicted will be
+derived (100*value/pred)}
 }
 \value{
-A \code{data.table} containing patient, test, and parameter data, either in "long" or "wide" format.
+A \code{data.table} containing patient, test, and parameters data
 }
 \description{
-Extracts and tidies spirometry measurement data for specified parameters from ndd XML files.
+Extracts and tidies spirometry measurement data for specified parameters
+from ndd XML files.
 }
 \details{
-This function parses ndd spirometry XML files to extract key test results, patient demographics,
-test/trial metadata, and spirometry parameter values (actual, predicted, LLN, z-score, units).
+This function parses ndd spirometry XML files to extract key test results,
+patient demographics, test/trial metadata, and spirometry parameter values
+(actual, predicted, LLN, z-score, units).
 \itemize{
 \item If \code{trace} is provided, only trials with the specified rank(s) are extracted.
-\item If \code{wide = TRUE}, measurements are spread so that each parameter/metric appears as its own column.
-\item If \code{tidy_colorder = TRUE}, columns are ordered for readability in the wide format.
-\item If \code{pct_pred = TRUE}, new columns \% predicted will be added for each parameters, note that not all
-parameters have meaningful \% columns
+\item If \code{pct_pred = TRUE}, new columns \% predicted will be added for each parameters,
+note that not all parameters have meaningful percentage predicted columns
 }
 }
 \examples{
