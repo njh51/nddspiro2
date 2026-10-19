@@ -29,7 +29,7 @@
 #' @examples
 #' \dontrun{
 #' doc <- xml2::read_xml("example_ndd.xml")
-#' dt <- read_spiro(doc, parameters = c("FEV1", "FVC"), trace = 1, wide = TRUE)
+#' dt <- read_spiro(doc, parameters = c("FEV1", "FVC"), trace = 1)
 #' }
 #' @export
 read_spiro = function(
